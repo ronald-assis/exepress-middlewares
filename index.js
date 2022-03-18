@@ -4,6 +4,7 @@ const ping = require('./middlewaares/ping');
 const hello = require('./middlewaares/hello');
 const greeting = require('./middlewaares/greeting');
 const getSimpsons = require('./middlewaares/getsimpson');
+const getSimpsonById = require('./middlewaares/getSimpsonById');
 
 const app  = express();
 const APP_PORT = 3001;
@@ -21,5 +22,8 @@ app.use('/greeting', greeting);
 
 // EX.8
 app.use('/simpsons', getSimpsons);
+
+// Ex.9
+app.use('/simpsons', getSimpsonById);
 
 app.listen(APP_PORT, () => {console.log(`Rodando na porta ${APP_PORT}`)})
